@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>User Profile</title>
 </head>
-
 <body>
     <h1>User Profile</h1>
 
@@ -18,13 +16,12 @@
     <h2>User Posts</h2>
     <ul>
         @foreach ($posts as $post)
-            <li>
-                <h3>{{ $post->caption }}</h3>
-                <img src="{{ $post->image_path }}" alt="{{ $post->caption }}">
-                <p>Created at: {{ $post->created_at }}</p>
-            </li>
+        <li>
+            <h3>{{ $post->caption }}</h3>
+            <img src="{{ $post->image_path }}" alt="{{ $post->caption }}">
+            <p>Created at: {{ $post->created_at }}</p>
+        </li>
         @endforeach
     </ul>
 </body>
-
 </html>
