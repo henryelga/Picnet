@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>User Profile</title>
-</head>
-
-<body>
+@extends('layouts.app')
+@section('content')
     @if (Auth::user())
         <h1>User Profile</h1>
 
@@ -40,6 +34,4 @@
             <p>You have no posts yet.</p>
         @endif
     @endif
-</body>
-
-</html>
+@endsection

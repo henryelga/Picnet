@@ -30,9 +30,25 @@
 <body>
     <div class="mainContainer">
         <div class="sidenav">
-            <a href="#temp"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/home--v1.png" alt="home icon"/>Home</a>
-            <a href="#temp"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/create--v1.png" alt="create icon"/>Create</a>
-            <a href="#temp"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/user-male-circle--v1.png" alt="user icon"/>Profile</a>
+            <a href="/posts"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/home--v1.png"
+                    alt="home icon" />Home</a>
+            <a href="#temp"><img class="navicons"
+                    src="https://img.icons8.com/fluency-systems-regular/48/create--v1.png"
+                    alt="create icon" />Create</a>
+            <a href="/profile"><img class="navicons"
+                    src="https://img.icons8.com/fluency-systems-regular/48/user-male-circle--v1.png"
+                    alt="user icon" />Profile</a>
+            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/user-male-circle--v1.png"
+                    alt="user icon" />
+                Logout
+            </a>
+
+            <!-- Logout Form -->
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+
         </div>
         @yield('content')
     </div>
