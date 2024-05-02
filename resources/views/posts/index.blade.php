@@ -5,7 +5,7 @@
             <div class="post">
                 <div class="posttop">
                     <img src="/images/catsleep.png">
-                    <p>{{ $post->user->username }}</p>
+                    <b><p>{{ $post->user->username }}</p></b>
                 </div>
                 <!--<img src="{{ $post->image_path }}" alt="{{ $post->caption }}">-->
                 <div class="postimage">
