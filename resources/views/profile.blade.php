@@ -19,8 +19,10 @@
                 @foreach ($posts as $post)
                     <li>
                         <h3>{{ $post->caption }}</h3>
-                        <img src="{{ $post->image_path }}" alt="{{ $post->caption }}">
-                        <p>Created at: {{ $post->created_at }}</p>
+                        <div class="postimage">
+                            <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}">
+                            <p>Created at: {{ $post->created_at }}</p>
+                        </div>
                     </li>
                 @endforeach
             </ul>
