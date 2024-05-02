@@ -19,6 +19,11 @@
         <a href="{{ route('editprofile') }}">Edit Profile</a>
         <a href="{{ route('posts.index') }}">Home</a>
 
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <button type="submit">Logout</button>
+        </form>
+
 
         <h2>Your Posts</h2>
         @if (isset($posts) && count($posts))

@@ -6,10 +6,14 @@
 </head>
 
 <body>
-    <h1>All Posts</h1>
+
+    @if (Auth::check())
+        <a href="{{ route('profile') }}">View Profile</a>
+    @else
+        <a href="{{ route('login') }}">Login</a>
+    @endif
 
     @if (Auth::user())
-    <a href="{{ route('profile') }}">View Profile</a>
         <h2>Your Posts</h2>
         @if (isset($posts) && count($posts))
             <ul>

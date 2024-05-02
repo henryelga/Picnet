@@ -11,7 +11,8 @@
 <body>
     <h1>Sample Page</h1>
     <p>
-        <a href="{{ route('posts.index') }}">View All Posts</a>
+        <a href="{{ route('login') }}">Login</a>
+        <a href="{{ route('posts.index') }}">Continue as Guest</a>
     <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro cum cupiditate blanditiis expedita itaque
         quaerat eum quod, optio a ipsum?</div>
     </p>
