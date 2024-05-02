@@ -35,6 +35,7 @@ class ProfileController extends Controller
      */
     public function updateProfile(Request $request)
     {
+        // dd($request->all());
         $user = Auth::user();
 
         $validated = $request->validate([
@@ -55,7 +56,8 @@ class ProfileController extends Controller
         // Fetch the updated user information
         $user = $user->fresh();
 
-        return redirect()->route('profile', compact('user'))->with('success', 'Profile updated successfully.');
+        return redirect()->route('profile')->with('success', 'Profile updated successfully.');
+
     }
 
 
