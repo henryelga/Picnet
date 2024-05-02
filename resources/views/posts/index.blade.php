@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html>
+@extends('layouts.app')
+@section('content')
 
-<head>
-    <title>All Posts</title>
-</head>
-
-<body>
-    <h1>All Posts</h1>
-
-    <ul>
+    <div class="postContainer">
         @foreach ($posts as $post)
-            <li>
-                <h3>{{ $post->caption }}</h3>
-                <img src="{{ $post->image_path }}" alt="{{ $post->caption }}">
+            <div class="post">
                 <p>Posted by User ID: {{ $post->user_id }}</p>
+                <img src="{{ $post->image_path }}" alt="{{ $post->caption }}">
+                <h3>{{ $post->caption }}</h3>
                 <p>Created at: {{ $post->created_at }}</p>
-            </li>
+            </div>
         @endforeach
-    </ul>
-</body>
-
-</html>
+    </div>
+    @endsection

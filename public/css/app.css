@@ -1,0 +1,24 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.welcomeContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.buttonContainer {
+    flex-direction: row;
+}
+
+.sidenav {
+    text-decoration: none;
+    color: red;
+    background-color: green;
+}
