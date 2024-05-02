@@ -108,12 +108,15 @@ sample-laravel-1
 │  │  ├─ 📄0001_01_01_000002_create_jobs_table.php
 │  │  ├─ 📄2024_05_01_172909_create_companies_table.php
 │  │  ├─ 📄2024_05_01_173620_users.php
-│  │  └─ 📄2024_05_01_174251_posts.php
+│  │  ├─ 📄2024_05_01_174251_posts.php
+│  │  └─ 📄2024_05_01_192413_create_sessions_table.php
 │  ├─ 📁seeders
 │  │  └─ 📄DatabaseSeeder.php
-│  ├─ 📄.gitignore
-│  └─ 📄database.sqlite
+│  └─ 📄.gitignore
 ├─ 📁public
+│  ├─ 📁css
+│  │  └─ 📄style.css
+│  ├─ 📁images
 │  ├─ 📄.htaccess
 │  ├─ 📄favicon.ico
 │  ├─ 📄index.php
@@ -150,11 +153,11 @@ sample-laravel-1
 │  │  │  └─ 📄.gitignore
 │  │  ├─ 📁views
 │  │  │  ├─ 📄.gitignore
-│  │  │  ├─ 📄c2996b1272c6fee54426ecfb0610b121.php
-│  │  │  ├─ 📄d52e2916ddaddaf6ca426b9a516d1c55.php
-│  │  │  ├─ 📄dbe6a5319f160c625c20d4bae75a0503.php
-│  │  │  ├─ 📄f7e390c7a7beb3a41fab304310eeda84.php
-│  │  │  └─ 📄fb9054ef02ff7edbc7d3a15de49cea9a.php
+│  │  │  ├─ 📄052d6e48a91f2ff04257fe331c708e4b.php
+│  │  │  ├─ 📄19091e2c422508110fe27a068e7438ef.php
+│  │  │  ├─ 📄492fc6facd1eb9b70ecf1030fbe738b2.php
+│  │  │  ├─ 📄4cc329cb2494e7a306707f4e79ebbdd5.php
+│  │  │  └─ 📄904d788e84d78774ad44d00ba1b5f8a2.php
 │  │  └─ 📄.gitignore
 │  └─ 📁logs
 │     ├─ 📄.gitignore
@@ -172,6 +175,7 @@ sample-laravel-1
 ├─ 📄artisan
 ├─ 📄composer.json
 ├─ 📄composer.lock
+├─ 📄package-lock.json
 ├─ 📄package.json
 ├─ 📄phpunit.xml
 ├─ 📄README.md

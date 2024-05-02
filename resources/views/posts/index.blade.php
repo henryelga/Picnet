@@ -1,51 +1,19 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>All Posts</title>
-</head>
-
-<body>
-
-    @if (Auth::check())
-        <a href="{{ route('profile') }}">View Profile</a>
-    @else
-        <a href="{{ route('login') }}">Login</a>
-    @endif
-
-    @if (Auth::user())
-        <h2>Your Posts</h2>
-        @if (isset($posts) && count($posts))
-            <ul>
-                @foreach ($posts as $post)
-                    <li>
-                        <h3>{{ $post->caption }}</h3>
-                        <img src="{{ $post->image_path }}" alt="{{ $post->caption }}">
-                        <p>Created at: {{ $post->created_at }}</p>
-                    </li>
-                @endforeach
-            </ul>
-        @else
-            <p>You have no posts yet.</p>
-        @endif
-    @endif
-
-    <h2>All Posts</h2>
-    @if (isset($allPosts) && count($allPosts))
-        <ul>
-            @foreach ($allPosts as $post)
-                <li>
-                    <h3>{{ $post->caption }}</h3>
-                    <img src="{{ $post->image_path }}" alt="{{ $post->caption }}">
-                    <p>Posted by User ID: {{ $post->user_id }}</p>
-                    <p>Posted by: {{ $post->user->name }}</p>
-                    <p>Created at: {{ $post->created_at }}</p>
-                </li>
-            @endforeach
-        </ul>
-    @else
-        <p>There are no posts yet.</p>
-    @endif
-</body>
-
-</html>
+@extends('layouts.app')
+@section('content')
+    <div class="postsContainer">
+        @foreach ($posts as $post)
+            <div class="post">
+                <div class="posttop">
+                    <img src="/images/catsleep.png">
+                    <b><p>{{ $post->user->username }}</p></b>
+                </div>
+                <!--<img src="{{ $post->image_path }}" alt="{{ $post->caption }}">-->
+                <div class="postimage">
+                    <img src="/images/catsleep.png">
+                </div>
+                <p>{{ $post->caption }}</hp>
+                <p>Created at: {{ $post->created_at }}</p>
+            </div>
+        @endforeach
+    </div>
+@endsection
