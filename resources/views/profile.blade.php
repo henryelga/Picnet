@@ -21,7 +21,7 @@
                         <h3>{{ $post->caption }}</h3>
                         <div class="postimage">
                             <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}">
-                            <p>Created at: {{ $post->created_at }}</p>
+                            <p>{{ $post->created_at->diffForHumans() }}</p>
                         </div>
                     </li>
                 @endforeach

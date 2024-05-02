@@ -17,7 +17,7 @@
                         <img src="/images/catsleep.png">
                     </div> --}}
                     <p>{{ $post->caption }}</hp>
-                    <p>Created at: {{ $post->created_at }}</p>
+                    <p>{{ $post->created_at->diffForHumans() }}</p>
                 </div>
             @endforeach
         @else

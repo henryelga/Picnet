@@ -43,5 +43,17 @@ class PostController extends Controller
         return redirect()->route('profile', auth()->user());
     }
 
+    public function destroy(Post $post)
+    {
+        // Check if the authenticated user owns the post
+        if ($post->user_id === auth()->id()) {
+            $post->delete();
+            return redirect()->route('profile', auth()->user())->with('success', 'Post deleted successfully.');
+        } else {
+            return redirect()->route('profile', auth()->user())->with('error', 'You are not authorized to delete this post.');
+        }
+    }
+
+
 
 }
