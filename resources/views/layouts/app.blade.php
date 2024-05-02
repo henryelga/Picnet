@@ -16,18 +16,27 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
 <body>
-    <div class="sidenav">
-        <a href="#home">Home</a>
-        <a href="#temp">Temp</a>
-        <a href="#temp">Temp</a>
-        <a href="#temp">Temp</a>
-    </div>
+    <div class="mainContainer">
+        <div class="sidenav">
+            <a href="#temp"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/home--v1.png" alt="home icon"/>Home</a>
+            <a href="#temp"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/create--v1.png" alt="create icon"/>Create</a>
+            <a href="#temp"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/user-male-circle--v1.png" alt="user icon"/>Profile</a>
+        </div>
         @yield('content')
     </div>
+    </div>
 </body>
+
 </html>

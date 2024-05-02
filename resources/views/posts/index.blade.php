@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="postContainer">
+    <div class="postsContainer">
         @foreach ($posts as $post)
             <div class="post">
                 <p>Posted by User ID: {{ $post->user_id }}</p>
                 <img src="{{ $post->image_path }}" alt="{{ $post->caption }}">
-                <h3>{{ $post->caption }}</h3>
+                <p>{{ $post->caption }}</hp>
                 <p>Created at: {{ $post->created_at }}</p>
             </div>
         @endforeach
