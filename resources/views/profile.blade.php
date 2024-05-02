@@ -19,6 +19,14 @@
                 @foreach ($posts as $post)
                     <li>
                         <h3>{{ $post->caption }}</h3>
+
+                        @if ($post->user_id === Auth::id())
+                            <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        @endif
                         <div class="postimage">
                             <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}">
                             <p>{{ $post->created_at->diffForHumans() }}</p>

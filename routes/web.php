@@ -25,7 +25,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/editprofile', [ProfileController::class, 'showProfile'])->name('editprofile');
 Route::put('/profile', [ProfileController::class, 'updateProfile'])->name('profile.update');
-// Route::get('/profile', [ProfileController::class, 'showProfile'])->name('profile.show');
+Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+
 
 
 
