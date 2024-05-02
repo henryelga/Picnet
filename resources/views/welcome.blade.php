@@ -21,9 +21,11 @@
     <div class="welcomeContainer">
         <h1>WanderSnap</h1>
         <div class="buttonContainer">
-            <a href="{{ route('register') }}">Register</a>
-            <a href="{{ route('login') }}">Login</a>
-            <a href="{{ route('posts.index') }}">Continue as guest</a>
+            <div class="reglogcontainer">
+                <a class="registerbutton" href="{{ route('register') }}">Register</a>
+                <a class="loginbutton" href="{{ route('login') }}">Login</a>
+            </div>
+            <a class="guestbutton" href="{{ route('posts.index') }}">Continue as guest</a>
         </div>
     </div>
 </body>

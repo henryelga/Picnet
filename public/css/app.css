@@ -12,7 +12,7 @@ img {
 .welcomeContainer {
     width: 100vw;
     height: 100vh;
-    background-color: pink;
+    background-color: rgb(224, 224, 224);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,43 @@ img {
 }
 
 .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttonContainer a {
+    text-decoration: none;
+    margin: 5px;
+}
+
+.reglogcontainer {
+    display: flex;
     flex-direction: row;
+}
+
+.reglogcontainer a {
+    font-size: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 5px 15px;
+    padding-bottom: 5px;
+    border-radius: 30px;
+}
+
+.registerbutton {
+    background-color: blue;
+    color: white;
+}
+
+.loginbutton {
+    background-color: white;
+    border: 2px solid blue;
+    color: blue;
+}
+
+.guestbutton {
+    color: rgb(74, 74, 74);
 }
 
 .mainContainer {
