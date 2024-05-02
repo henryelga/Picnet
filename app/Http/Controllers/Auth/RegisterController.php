@@ -46,6 +46,18 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+    // protected function validator(array $data)
+    // {
+    //     return Validator::make($data, [
+    //         'username' => ['required', 'string', 'max:255'],
+    //         'name' => ['required', 'string', 'max:255'],
+    //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+    //         'password' => ['required', 'string', 'min:8', 'confirmed'],
+    //         'pfp' => ['nullable', 'string'],
+    //         'bio' => ['nullable', 'string'],
+    //     ]);
+    // }
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -53,10 +65,10 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'pfp' => ['nullable', 'string'],
-            'bio' => ['nullable', 'string'],
         ]);
     }
+
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -75,5 +87,4 @@ class RegisterController extends Controller
             'bio' => $data['bio'] ?? 'Enter your bio here',
         ]);
     }
-
 }
