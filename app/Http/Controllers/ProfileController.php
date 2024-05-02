@@ -52,6 +52,11 @@ class ProfileController extends Controller
 
         $user->update($validated);
 
-        return redirect()->route('profile')->with('success', 'Profile updated successfully.');
+        // Fetch the updated user information
+        $user = $user->fresh();
+
+        return redirect()->route('profile', compact('user'))->with('success', 'Profile updated successfully.');
     }
+
+
 }

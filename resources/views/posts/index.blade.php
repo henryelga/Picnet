@@ -9,6 +9,7 @@
     <h1>All Posts</h1>
 
     @if (Auth::user())
+    <a href="{{ route('profile') }}">View Profile</a>
         <h2>Your Posts</h2>
         @if (isset($posts) && count($posts))
             <ul>

@@ -12,9 +12,9 @@
         <h2>User Information</h2>
         <p>Username: {{ $user->username }}</p>
         <p>Name: {{ $user->name }}</p>
-        {{-- <p>Email: {{ $user->email }}</p> --}}
+        <p>Email: {{ $user->email }}</p>
         <p>Bio: {{ $user->bio }}</p>
-        <img src="{{ $user->pfp }}" alt="{{ $user->name }}'s profile picture">
+        <img src="{{ $user->pfp ? asset('storage/' . $user->pfp) : '' }}" alt="{{ $user->name }}'s profile picture">
 
         <a href="{{ route('editprofile') }}">Edit Profile</a>
         <a href="{{ route('posts.index') }}">Home</a>
