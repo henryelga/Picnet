@@ -6,7 +6,8 @@ html, body {
 }
 
 img {
-    pointer-events: none
+    pointer-events: none;
+    /* max-width: 500px; */
 }
 
 /* ======================================== Welcome Page ===============================================*/
@@ -110,7 +111,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 
 .post {

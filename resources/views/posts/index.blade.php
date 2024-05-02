@@ -10,12 +10,14 @@
                             <p>{{ $post->user->username }}</p>
                         </b>
                     </div>
-                    <!--<img src="{{ $post->image_path }}" alt="{{ $post->caption }}">-->
                     <div class="postimage">
-                        <img src="/images/catsleep.png">
+                        <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}">
                     </div>
+                    {{-- <div class="postimage">
+                        <img src="/images/catsleep.png">
+                    </div> --}}
                     <p>{{ $post->caption }}</hp>
-                    <p>Created at: {{ $post->created_at }}</p>
+                    <p>{{ $post->created_at->diffForHumans() }}</p>
                 </div>
             @endforeach
         @else
