@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('pfp');
-            $table->string('bio');
+            $table->string('pfp')->default('pic.jpg');
+            $table->string('bio')->default('Enter your bio here');
             $table->rememberToken();
             $table->timestamps();
         });
