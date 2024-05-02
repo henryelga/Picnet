@@ -54,4 +54,30 @@ class PostController extends Controller
         }
     }
 
+    public function edit(Post $post)
+    {
+        // Check if the authenticated user owns the post
+        if ($post->user_id === auth()->id()) {
+            return view('posts.edit', compact('post'));
+        } else {
+            return redirect()->route('profile', auth()->user())->with('error', 'You are not authorized to edit this post.');
+        }
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        // Check if the authenticated user owns the post
+        if ($post->user_id === auth()->id()) {
+            $validatedData = $request->validate([
+                'caption' => 'required|string|max:255',
+            ]);
+
+            $post->update($validatedData);
+            return redirect()->route('profile', auth()->user())->with('success', 'Post updated successfully.');
+        } else {
+            return redirect()->route('profile', auth()->user())->with('error', 'You are not authorized to update this post.');
+        }
+    }
+
+
 }

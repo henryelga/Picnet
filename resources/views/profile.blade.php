@@ -21,11 +21,14 @@
                         <h3>{{ $post->caption }}</h3>
 
                         @if ($post->user_id === Auth::id())
-                            <form action="{{ route('posts.destroy', $post) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                            </form>
+                            <div class="d-flex gap-2">
+                                <a href="{{ route('posts.edit', $post) }}" class="btn btn-primary btn-sm">Edit</a>
+                                <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </div>
                         @endif
                         <div class="postimage">
                             <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}">

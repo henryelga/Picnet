@@ -25,7 +25,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/editprofile', [ProfileController::class, 'showProfile'])->name('editprofile');
 Route::put('/profile', [ProfileController::class, 'updateProfile'])->name('profile.update');
+
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
+
 
 
 
