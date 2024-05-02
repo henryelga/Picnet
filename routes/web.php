@@ -11,7 +11,7 @@ Route::get('/', function () {
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
-// Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 // Route::get('profile', [App\Http\Controllers\ProfileController::class, 'index'])->middleware('auth')->name('profile');
 
 
@@ -28,3 +28,8 @@ Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/editprofile', [ProfileController::class, 'showProfile'])->name('editprofile');
+Route::put('/profile', [ProfileController::class, 'updateProfile'])->name('profile.update');
+
+
