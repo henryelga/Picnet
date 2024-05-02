@@ -19,7 +19,7 @@
                 </div>
             @endforeach
         @else
-            <p>You have no posts yet.</p>
+            <p>There are no posts yet.</p>
         @endif
     </div>
 @endsection
