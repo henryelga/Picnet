@@ -20,4 +20,28 @@ class PostController extends Controller
             return view('posts.index', compact('allPosts'));
         }
     }
+
+    public function create()
+    {
+        return view('posts.create');
+    }
+
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'caption' => 'required|string|max:255',
+            'image' => 'required|image|max:2048',
+        ]);
+
+        $imagePath = $request->file('image')->store('public/images');
+
+        $post = auth()->user()->posts()->create([
+            'caption' => $validatedData['caption'],
+            'image_path' => $imagePath,
+        ]);
+
+        return redirect()->route('profile', auth()->user());
+    }
+
+
 }

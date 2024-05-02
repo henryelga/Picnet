@@ -32,7 +32,7 @@
         <div class="sidenav">
             <a href="/posts"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/home--v1.png"
                     alt="home icon" />Home</a>
-            <a href="#temp"><img class="navicons"
+            <a href="{{ route('posts.create') }}"><img class="navicons"
                     src="https://img.icons8.com/fluency-systems-regular/48/create--v1.png"
                     alt="create icon" />Create</a>
             <a href="/profile"><img class="navicons"
