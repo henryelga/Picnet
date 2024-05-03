@@ -42,6 +42,10 @@
             <img class="navicons flipped" img src="https://img.icons8.com/fluency-systems-regular/48/exit--v1.png" alt="logout icon"/>Logout</a>
             @endguest
 
+            @admin
+            <a href="{{ route('admin.dashboard') }}"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/data-configuration.png" alt="admin icon"/>Admin</a>
+            @endadmin
+
             <!-- Logout Form -->
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
