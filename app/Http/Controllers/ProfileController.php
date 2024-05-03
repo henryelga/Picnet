@@ -48,8 +48,8 @@ class ProfileController extends Controller
         ]);
 
         if ($request->hasFile('pfp')) {
-            $pfp = $request->file('pfp')->store('profiles', 'public');
-            $validated['pfp'] = $pfp;
+            $pfpPath = $request->file('pfp')->store('profiles', 'public');
+            $user->pfp = $pfpPath;
         }
 
         // $user->update($validated);

@@ -4,8 +4,7 @@
         <div class="profileContainer">
             <div class="profileWrapper">
                 <div class="pfpContainer">
-                    <!--<img src="{{ $user->pfp ? asset('storage/' . $user->pfp) : '' }}" alt="{{ $user->name }}'s profile picture">-->
-                    <img src="/images/catsleep.png">
+                    <img src="{{ $user->pfp ? asset('storage/' . $user->pfp) : '' }}" alt="{{ $user->name }}'s profile picture">
                 </div>
                 <div class="profileDetails">
                     <p><b>{{ $user->username }}</b> <a href="{{ route('editprofile') }}">Edit Profile</a></p>

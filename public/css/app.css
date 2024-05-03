@@ -159,6 +159,7 @@ img {
 
 .pfpContainer img {
     width: 150px;
+    height: 150px;
     border-radius: 100px;
     margin-right: 60px;
 }
