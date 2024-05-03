@@ -162,3 +162,9 @@ img {
     border-radius: 100px;
     margin-right: 60px;
 }
+
+/* ======================================== Admin Page ===============================================*/
+
+.adminContainer {
+    margin-left: 100px;
+}
