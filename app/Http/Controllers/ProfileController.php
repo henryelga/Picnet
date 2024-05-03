@@ -52,7 +52,12 @@ class ProfileController extends Controller
             $validated['pfp'] = $pfp;
         }
 
-        $user->update($validated);
+        // $user->update($validated);
+        $user->username = $validated['username'];
+        $user->name = $validated['name'];
+        $user->email = $validated['email'];
+        $user->bio = $validated['bio'];
+        $user->save();
 
         // Fetch the updated user information
         $user = $user->fresh();
