@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LikeController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,6 +36,9 @@ Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.upda
 Route::group(['middleware' => ['auth', AdminMiddleware::class]], function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 });
+
+Route::post('/posts/{post}/like', [LikeController::class, 'like'])->name('posts.like');
+Route::delete('/posts/{post}/unlike', [LikeController::class, 'unlike'])->name('posts.unlike');
 
 
 
