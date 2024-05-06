@@ -5,10 +5,22 @@
             @foreach ($allPosts as $post)
                 <div class="post">
                     <div class="posttop">
-                        <img src="/images/catsleep.png">
+                        {{-- <img src="/images/catsleep.png"> --}}
+                        <img src="{{ $post->user->pfp ? asset('storage/' . $post->user->pfp) : '' }}"
+                            alt="{{ $post->user->username }}'s profile picture">
                         <b>
                             <p>{{ $post->user->username }}</p>
                         </b>
+
+                    </div>
+                    <div class="postimage">
+                        <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}">
+                    </div>
+                    <div class="postDescription">
+                        <div>
+                            <p>{{ $post->caption }}</p>
+                            <p>{{ $post->created_at->diffForHumans() }}</p>
+                        </div>
                         <div class="likeButtons">
                             <button type="button" class="like-btn" data-post-id="{{ $post->id }}">
                                 @if (auth()->user() && $post->likedByUser(auth()->user()))
@@ -19,15 +31,7 @@
                             </button>
                             <span class="like-count">{{ $post->likes()->count() }}</span>
                         </div>
-
-
-
                     </div>
-                    <div class="postimage">
-                        <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}">
-                    </div>
-                    <p>{{ $post->caption }}</p>
-                    <p>{{ $post->created_at->diffForHumans() }}</p>
                 </div>
             @endforeach
         @else
@@ -64,7 +68,7 @@
                             console.error(error);
                             alert(
                                 'An error occurred while processing your request. Please try again later.'
-                                );
+                            );
                         }
                     });
                 } else {
@@ -80,12 +84,12 @@
                             $likeIcon.attr('alt', 'Liked');
                             $likeCount.text(response.likeCount);
                         },
-                        error: function(xhr, status, error) {
-                            console.error(error);
-                            alert(
-                                'An error occurred while processing your request. Please try again later.'
-                                );
-                        }
+                        // error: function(xhr, status, error) {
+                        //     console.error(error);
+                        //     alert(
+                        //         'An error occurred while processing your request. '
+                        //     );
+                        // }
                     });
                 }
             });
