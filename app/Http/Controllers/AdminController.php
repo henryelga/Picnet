@@ -13,4 +13,10 @@ class AdminController extends Controller
 
         return view('admin.dashboard', ['users' => $users]);
     }
+
+    public function destroyUser(User $user)
+    {
+        $user->delete();
+        return redirect()->route('admin.dashboard')->with('success', 'User deleted successfully');
+    }
 }

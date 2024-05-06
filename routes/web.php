@@ -36,5 +36,7 @@ Route::group(['middleware' => ['auth', AdminMiddleware::class]], function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 });
 
+Route::delete('/admin/users/{user}', [AdminController::class, 'destroyUser'])->name('admin.users.destroy');
+
 
 
