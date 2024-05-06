@@ -36,6 +36,22 @@
             <div class="modal-content">
                 <span class="close-button">&times;</span>
                 <img id="modal-image" src="" alt="Modal Image">
+                <div class="postDescription">
+                    <div>
+                        <p>{{ $post->caption }}</p>
+                        <p>{{ $post->created_at->diffForHumans() }}</p>
+                    </div>
+                    <div class="likeButtons">
+                        <button type="button" class="like-btn" data-post-id="{{ $post->id }}">
+                            @if (auth()->user() && $post->likedByUser(auth()->user()))
+                                <img src="{{ asset('images/red-heart.png') }}" alt="Liked" class="like-icon">
+                            @else
+                                <img src="{{ asset('images/heart.png') }}" alt="Not Liked" class="like-icon">
+                            @endif
+                        </button>
+                        <span class="like-count">{{ $post->likes()->count() }}</span>
+                    </div>
+                </div>
             </div>
         </div>
     @endif
