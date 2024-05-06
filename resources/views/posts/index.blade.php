@@ -12,12 +12,15 @@
                         <div class="likeButtons">
                             <button type="button" class="like-btn" data-post-id="{{ $post->id }}">
                                 @if ($post->likedByUser(auth()->user()))
-                                    Like
+                                    <img src="{{ asset('images/red-heart.png') }}" alt="Liked" class="like-icon">
                                 @else
-                                    Unlike
+                                    <img src="{{ asset('images/heart.png') }}" alt="Not Liked" class="like-icon">
                                 @endif
                             </button>
+                            <span class="like-count">{{ $post->likes()->count() }}</span>
                         </div>
+
+
 
                     </div>
                     <div class="postimage">
@@ -33,24 +36,55 @@
     </div>
 @endsection
 @push('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        document.querySelectorAll('.like-btn').forEach(btn => {
-            btn.addEventListener('click', async () => {
-                const postId = btn.dataset.postId;
-                const method = btn.textContent.trim().toLowerCase() === 'like' ? 'POST' : 'DELETE';
-                const response = await fetch(`/posts/${postId}/like`, {
-                    method,
-                    headers: {
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                        'Content-Type': 'application/json'
-                    }
-                });
+        $(document).ready(function() {
+            $('.like-btn').click(function(e) {
+                e.preventDefault();
+                var postId = $(this).data('post-id');
+                var $likeBtn = $(this);
+                var $likeCount = $likeBtn.siblings('.like-count');
+                var $likeIcon = $likeBtn.find('.like-icon');
 
-                if (response.ok) {
-                    const data = await response.json();
-                    btn.textContent = data.buttonText;
+                // Check if the button has the "heart-filled" class
+                if ($likeIcon.attr('src') === '{{ asset('images/red-heart.png') }}') {
+                    // Unlike the post
+                    $.ajax({
+                        url: '/posts/' + postId + '/unlike',
+                        method: 'DELETE',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function(response) {
+                            $likeIcon.attr('src', '{{ asset('images/heart.png') }}');
+                            $likeIcon.attr('alt', 'Not Liked');
+                            $likeCount.text(response.likeCount);
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(error);
+                            alert(
+                                'An error occurred while processing your request. Please try again later.');
+                        }
+                    });
                 } else {
-                    alert('Error: could not update like status.');
+                    // Like the post
+                    $.ajax({
+                        url: '/posts/' + postId + '/like',
+                        method: 'POST',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function(response) {
+                            $likeIcon.attr('src', '{{ asset('images/red-heart.png') }}');
+                            $likeIcon.attr('alt', 'Liked');
+                            $likeCount.text(response.likeCount);
+                        },
+                        error: function(xhr, status, error) {
+                            console.error(error);
+                            alert(
+                                'An error occurred while processing your request. Please try again later.');
+                        }
+                    });
                 }
             });
         });

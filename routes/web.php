@@ -39,6 +39,6 @@ Route::group(['middleware' => ['auth', AdminMiddleware::class]], function () {
 
 
 Route::post('/posts/{post}/like', [LikeController::class, 'like'])->name('posts.like');
-Route::delete('/posts/{post}/like', [LikeController::class, 'unlike'])->name('posts.unlike');
+Route::delete('/posts/{post}/unlike', [LikeController::class, 'unlike'])->name('posts.unlike');
 
 

@@ -79,5 +79,21 @@ class PostController extends Controller
         }
     }
 
+    public function like(Request $request, Post $post)
+    {
+        $user = $request->user();
+
+        if ($post->isLikedByUser($user)) {
+            $post->likes()->where('user_id', $user->id)->delete();
+            $liked = false;
+        } else {
+            $post->likes()->create(['user_id' => $user->id]);
+            $liked = true;
+        }
+
+        $likeCount = $post->likes()->count();
+
+        return response()->json(['liked' => $liked, 'likeCount' => $likeCount]);
+    }
 
 }

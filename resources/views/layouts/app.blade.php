@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -30,20 +35,29 @@
 <body>
     <div class="mainContainer">
         <div class="sidenav">
-            <a href="/posts"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/home--v1.png" alt="home icon" />Home</a>
+            <a href="/posts"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/home--v1.png"
+                    alt="home icon" />Home</a>
             @guest
-            <a href="/register"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/add-user-male--v1.png" alt="register"/>Register</a>
-            <a href="/login"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/enter-2.png" alt="login icon" />Login</a>
-
+                <a href="/register"><img class="navicons"
+                        src="https://img.icons8.com/fluency-systems-regular/48/add-user-male--v1.png"
+                        alt="register" />Register</a>
+                <a href="/login"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/enter-2.png"
+                        alt="login icon" />Login</a>
             @else
-            <a href="{{ route('posts.create') }}"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/plus.png" alt="create icon"/>Create</a>
-            <a href="/profile"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/user-male-circle--v1.png" alt="user icon" />Profile</a>
-            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            <img class="navicons flipped" img src="https://img.icons8.com/fluency-systems-regular/48/exit--v1.png" alt="logout icon"/>Logout</a>
+                <a href="{{ route('posts.create') }}"><img class="navicons"
+                        src="https://img.icons8.com/fluency-systems-regular/48/plus.png" alt="create icon" />Create</a>
+                <a href="/profile"><img class="navicons"
+                        src="https://img.icons8.com/fluency-systems-regular/48/user-male-circle--v1.png"
+                        alt="user icon" />Profile</a>
+                <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <img class="navicons flipped" img src="https://img.icons8.com/fluency-systems-regular/48/exit--v1.png"
+                        alt="logout icon" />Logout</a>
             @endguest
 
             @admin
-            <a href="{{ route('admin.dashboard') }}"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/data-configuration.png" alt="admin icon"/>Admin</a>
+                <a href="{{ route('admin.dashboard') }}"><img class="navicons"
+                        src="https://img.icons8.com/fluency-systems-regular/48/data-configuration.png"
+                        alt="admin icon" />Admin</a>
             @endadmin
 
             <!-- Logout Form -->
@@ -54,7 +68,8 @@
         </div>
         @yield('content')
     </div>
-    </div>
+    @stack('scripts')
+
 </body>
 
 </html>
