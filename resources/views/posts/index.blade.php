@@ -11,7 +11,7 @@
                         </b>
                         <div class="likeButtons">
                             <button type="button" class="like-btn" data-post-id="{{ $post->id }}">
-                                @if ($post->likedByUser(auth()->user()))
+                                @if (auth()->user() && $post->likedByUser(auth()->user()))
                                     <img src="{{ asset('images/red-heart.png') }}" alt="Liked" class="like-icon">
                                 @else
                                     <img src="{{ asset('images/heart.png') }}" alt="Not Liked" class="like-icon">
@@ -63,7 +63,8 @@
                         error: function(xhr, status, error) {
                             console.error(error);
                             alert(
-                                'An error occurred while processing your request. Please try again later.');
+                                'An error occurred while processing your request. Please try again later.'
+                                );
                         }
                     });
                 } else {
@@ -82,7 +83,8 @@
                         error: function(xhr, status, error) {
                             console.error(error);
                             alert(
-                                'An error occurred while processing your request. Please try again later.');
+                                'An error occurred while processing your request. Please try again later.'
+                                );
                         }
                     });
                 }
