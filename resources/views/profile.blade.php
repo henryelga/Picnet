@@ -4,7 +4,8 @@
         <div class="profileContainer">
             <div class="profileDetails">
                 <div class="pfpContainer">
-                    <img src="{{ $user->pfp ? asset('storage/' . $user->pfp) : '' }}" alt="{{ $user->name }}'s profile picture">
+                    <img src="{{ $user->pfp ? asset('storage/' . $user->pfp) : '' }}"
+                        alt="{{ $user->name }}'s profile picture">
                 </div>
                 <div>
                     <p><b>{{ $user->username }}</b><a class="editProfileButton" href="{{ route('editprofile') }}">Edit
@@ -15,9 +16,9 @@
                 </div>
             </div>
 
-            <div class="yourPostsContainer">
-                <h2>Posts</h2>
-                @if (isset($posts) && count($posts))
+            <div class="postsTitle"><h2>Posts</h2></div>
+            @if (isset($posts) && count($posts))
+                <div class="postsContainer">
                     @foreach ($posts as $post)
                         @if ($post->user_id === Auth::id())
                             <div class="post">
@@ -64,13 +65,13 @@
                                     </div>
                                 </div>
                             </div>
-            </div>
-        </div>
-    @endif
-    @endforeach
-@else
-    <p>You have no posts yet.</p>
-    @endif
+                        @endif
+                    @endforeach
+                </div>
+            @else
+                <p>You have no posts yet.</p>
+            @endif
+        </div> <!-- end of profileContainer -->
     @endif
 @endsection
 @push('scripts')

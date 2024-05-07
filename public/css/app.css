@@ -186,16 +186,17 @@ img {
     width: 100%;
 }
 
+.postsTitle {
+    margin-left: 200px;
+    margin-right: 200px;
+    border-bottom: 1px solid #ddd;
+}
+
 .profileDetails {
     display: flex;
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: 200px;
-}
-
-.yourPostsContainer {
-    margin: auto;
-    border-top: 1px solid #ccc;
 }
 
 .pfpContainer img {
