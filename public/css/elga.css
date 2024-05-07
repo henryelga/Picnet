@@ -6,12 +6,18 @@
     margin: auto;
 }
 
+body {
+    background-image: url("https://cdn.discordapp.com/attachments/1030153058929352725/1237460420923752629/9f4dc7b6c5fa5c6804e84e4a19a8bedb.png?ex=663bba53&is=663a68d3&hm=b6c37602d8db888ca9fbd6a28d4b118e9b949921efc5f5988c921130a1ead5f5&");
+}
+
 .card {
     width: 400px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 .card-header {
     background-color: #7c3aed;
@@ -27,7 +33,7 @@
     padding: 24px;
 }
 
-label{
+label {
     color: #0000008e;
     font-size: 12px;
     font-weight: bold;
@@ -54,6 +60,10 @@ label{
     color: #dc3545;
     font-size: 14px;
     margin-top: 4px;
+}
+
+.submitButton{
+    text-align: center;
 }
 
 .btn-primary {

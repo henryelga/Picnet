@@ -69,7 +69,7 @@
                             required autocomplete="new-password">
                     </div>
 
-                    <div>
+                    <div class="submitButton">
                         <div>
                             <button type="submit" class="btn btn-primary">
                                 {{ __('Register') }}
