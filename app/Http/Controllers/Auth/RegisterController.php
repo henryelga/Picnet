@@ -8,6 +8,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use App\Services\ProfanityChecker;
+use Illuminate\Http\Request;
+
 class RegisterController extends Controller
 {
     /*
@@ -74,10 +77,17 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\Models\User
+     * @return \App\Models\User|string[]
      */
     protected function create(array $data)
     {
+        $profanityChecker = new ProfanityChecker();
+        $profanityCheck = $profanityChecker->checkProfanity($data['username']);
+
+        if ($profanityCheck['is-bad']) {
+            throw new \Exception('Username contains profanity');
+        }
+
         return User::create([
             'username' => $data['username'],
             'name' => $data['name'],
@@ -86,5 +96,24 @@ class RegisterController extends Controller
             'pfp' => $data['pfp'] ?? 'images/catsleep.png',
             'bio' => $data['bio'] ?? 'Enter your bio here',
         ]);
+    }
+
+    public function register(Request $request)
+    {
+        $request->validate([
+            'username' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        try {
+            $user = $this->create($request->all());
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['username' => $e->getMessage()]);
+        }
+
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
     }
 }
