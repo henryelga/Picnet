@@ -225,6 +225,7 @@ img {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
     justify-content: center;
+    padding: auto;
 }
 
 .modal-content {
@@ -233,34 +234,100 @@ img {
     border: 1px solid #888;
     width: 80%;
     max-width: 800px;
-    height: 80%;
+    /* height: 80%; */
+    margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: auto auto;
+}
+
+.post-description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .close-button {
-    color: #aaa;
-    /* position: absolute; */
+    color: #000;
+    position: absolute;
     top: 10px;
-    right: 10px;
-    font-size: 28px;
+    right: 20px;
+    font-size: 48px;
     font-weight: bold;
 }
 
 .close-button:hover,
 .close-button:focus {
-    color: black;
+    color: #eee;
     text-decoration: none;
     cursor: pointer;
 }
 
+#modal-prev-btn,
+#modal-next-btn {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#modal-prev-btn {
+    left: 20px;
+}
+
+#modal-prev-btn:hover,
+#modal-next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#modal-next-btn {
+    right: 20px;
+}
+
 #modal-image {
     max-width: 100%;
-    max-height: 70%;
+    max-height: 70vh;
     object-fit: contain;
 }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
+}
+
 
 
 /* ======================================== Admin Page ===============================================*/

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Like;
 use Auth;
 
 class PostController extends Controller
@@ -47,7 +48,12 @@ class PostController extends Controller
     {
         // Check if the authenticated user owns the post
         if ($post->user_id === auth()->id()) {
+            // Delete associated likes
+            Like::where('post_id', $post->id)->delete();
+
+            // Delete the post
             $post->delete();
+
             return redirect()->route('profile', auth()->user())->with('success', 'Post deleted successfully.');
         } else {
             return redirect()->route('profile', auth()->user())->with('error', 'You are not authorized to delete this post.');
