@@ -45,14 +45,8 @@
                 <a href="/login"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/enter-2.png"
                         alt="login icon" />Login</a>
             @else
-                <a href="{{ route('posts.create') }}"><img class="navicons"
-                        src="https://img.icons8.com/fluency-systems-regular/48/plus.png" alt="create icon" />Create</a>
-                <a href="/profile"><img class="navicons"
-                        src="https://img.icons8.com/fluency-systems-regular/48/user-male-circle--v1.png"
-                        alt="user icon" />Profile</a>
-                <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    <img class="navicons flipped" img src="https://img.icons8.com/fluency-systems-regular/48/exit--v1.png"
-                        alt="logout icon" />Logout</a>
+            <a href="{{ route('posts.create') }}"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/plus.png" alt="create icon"/>Create</a>
+            <a href="/profile"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/user-male-circle--v1.png" alt="user icon" />Profile</a>
             @endguest
 
             @admin
@@ -60,6 +54,10 @@
                         src="https://img.icons8.com/fluency-systems-regular/48/data-configuration.png"
                         alt="admin icon" />Admin</a>
             @endadmin
+
+            @auth
+            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img class="navicons flipped" img src="https://img.icons8.com/fluency-systems-regular/48/exit--v1.png" alt="logout icon"/>Logout</a>
+            @endauth
 
             <!-- Logout Form -->
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
