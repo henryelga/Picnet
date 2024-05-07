@@ -288,7 +288,47 @@ img {
 /* ======================================== Admin Page ===============================================*/
 
 .adminContainer {
-    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 100px;
+}
+
+.dashboardTable {
+    border-collapse: collapse;
+}
+
+.dashboardTable td {
+    padding: 2px 8px;
+}
+
+.dashboardTable th {
+    padding: 2px 8px;
+    text-align: left;
+}
+
+.dashboardTable tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+.dashboardTable tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.deleteUsersButton {
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.deleteUsersButton img {
+    height: 20px;
 }
 
 /* ======================================== Create Post Page ===============================================*/

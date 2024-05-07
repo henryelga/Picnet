@@ -4,7 +4,7 @@
         <h1>Admin Dashboard</h1>
         <h3>Users</h3>
 
-        <table>
+        <table class="dashboardTable">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -22,7 +22,7 @@
                             <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit">Delete</button>
+                                <button class="deleteUsersButton" type="submit"><img src="https://img.icons8.com/fluency-systems-filled/48/FA5252/trash.png" alt="delete icon"/></button>
                             </form>
                         </td>
                     </tr>
