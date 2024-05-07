@@ -1,0 +1,102 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: auto;
+}
+
+body.auth-page {
+    background-image: url("https://cdn.discordapp.com/attachments/1030153058929352725/1237460420923752629/9f4dc7b6c5fa5c6804e84e4a19a8bedb.png?ex=663bba53&is=663a68d3&hm=b6c37602d8db888ca9fbd6a28d4b118e9b949921efc5f5988c921130a1ead5f5&");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.card {
+    width: 400px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.card-header {
+    background-color: #5839FC;
+    color: #fff;
+    padding: 16px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 24px;
+}
+
+label {
+    color: #0000008e;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 25px;
+    font-size: 14px;
+    border: 1px solid #63626283;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #5839FC;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(76, 139, 245, 0.25);
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.submitButton {
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #5839FC;
+    border-color: #5839FC;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #5234e4;
+    border-color: #5839FC;
+}
+
+#remember {
+    margin-bottom: 20px;
+}
+
+.forgotPwd {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.forgotPwd a {
+    text-decoration: none;
+    color: #5839FC;
+    font-size: 12px;
+}
