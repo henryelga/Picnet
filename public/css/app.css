@@ -290,3 +290,13 @@ img {
 .adminContainer {
     margin-left: 100px;
 }
+
+/* ======================================== Create Post Page ===============================================*/
+
+.createContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}

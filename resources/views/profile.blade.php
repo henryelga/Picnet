@@ -49,7 +49,7 @@
                                 <div class="postDescription">
                                     <div>
                                         <p>{{ $post->caption }}</p>
-                                        <p>{{ $post->created_at->diffForHumans() }}</p>
+                                        <p style="color: rgb(109, 109, 109)">{{ $post->created_at->diffForHumans() }}</p>
                                     </div>
                                     <div class="likeButtons">
                                         <button type="button" class="like-btn" data-post-id="{{ $post->id }}">
