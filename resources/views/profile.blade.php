@@ -19,7 +19,7 @@
             @if (isset($posts) && count($posts))
                 @foreach ($posts as $post)
                     @if ($post->user_id === Auth::id())
-                        <a href="{{ route('posts.edit', $post) }}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="{{ route('posts.edit', $post) }}" class="btn-sm">Edit</a>
                         <form action="{{ route('posts.destroy', $post) }}" method="POST">
                             @csrf
                             @method('DELETE')
