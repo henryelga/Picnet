@@ -33,7 +33,7 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 
-<body>
+<body class="{{ Request::is('login') || Request::is('register') ? 'auth-page' : '' }}">
     <div class="mainContainer">
         <div class="sidenav">
             <a href="/posts"><img class="navicons" src="https://img.icons8.com/fluency-systems-regular/48/home--v1.png"
