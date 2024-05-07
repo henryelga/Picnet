@@ -8,8 +8,8 @@
                         alt="{{ $user->name }}'s profile picture">
                 </div>
                 <div>
-                    <p><b>{{ $user->username }}</b><a class="editProfileButton" href="{{ route('editprofile') }}">Edit
-                            Profile</a></p>
+                    <p><b>{{ $user->username }}</b>
+                    <a class="editProfileButton" href="{{ route('editprofile') }}">Edit Profile</a></p>
                     <p>{{ $user->name }}</p>
                     {{-- <p>Email: {{ $user->email }}</p> --}}
                     <p>{{ $user->bio }}</p>
@@ -49,7 +49,7 @@
                                 <div class="postDescription">
                                     <div>
                                         <p>{{ $post->caption }}</p>
-                                        <p style="color: rgb(109, 109, 109)">{{ $post->created_at->diffForHumans() }}</p>
+                                        <p style="color: rgb(74, 74, 74);">{{ $post->created_at->diffForHumans() }}</p>
                                     </div>
                                     <div class="likeButtons">
                                         <button type="button" class="like-btn" data-post-id="{{ $post->id }}">

@@ -49,14 +49,14 @@ img {
 }
 
 .registerbutton {
-    background-color: blue;
+    background-color: #5839FC;
     color: white;
 }
 
 .loginbutton {
     background-color: white;
-    border: 2px solid blue;
-    color: blue;
+    border: 2px solid #5839FC;
+    color: #5839FC; 
 }
 
 .guestbutton {
@@ -211,7 +211,8 @@ img {
     margin-left: 20px;
     text-decoration: none;
     color: black;
-    background-color: rgb(209, 209, 209);
+    background-color:  #F7F7F7;
+    border: 1px solid rgb(209, 209, 209);
     padding: 5px 10px;
     border-radius: 30px;
 }
