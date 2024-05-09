@@ -13,12 +13,13 @@ return new class extends Migration {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->longText('caption');
-            $table->string('image_path');
+            $table->json('image_paths');
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }
+
 
     /**
      * Reverse the migrations.

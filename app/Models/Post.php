@@ -14,6 +14,10 @@ class Post extends Model
      *
      * @var array<int, string>
      */
+
+     protected $casts = [
+        'image_paths' => 'array',
+    ];
     protected $fillable = [
         'caption',
         'image_path',

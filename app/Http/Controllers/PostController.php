@@ -29,19 +29,24 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'caption' => 'required|string|max:255',
-            'image' => 'required|image|max:2048',
+            'caption' => 'required',
+            'images.*' => 'required|image',
         ]);
 
-        $imagePath = $request->file('image')->store('public/images');
+        $imagePaths = [];
+        foreach ($request->file('images') as $image) {
+            $imagePaths[] = $image->store('posts', 'public');
+        }
 
-        $post = auth()->user()->posts()->create([
-            'caption' => $validatedData['caption'],
-            'image_path' => $imagePath,
-        ]);
+        $post = new Post();
+        $post->caption = $validatedData['caption'];
+        $post->image_paths = $imagePaths;
+        $post->user_id = auth()->user()->id;
+        $post->save();
 
-        return redirect()->route('profile', auth()->user());
+        return redirect()->route('posts.index')->with('success', 'Post created successfully.');
     }
+
 
     public function destroy(Post $post)
     {

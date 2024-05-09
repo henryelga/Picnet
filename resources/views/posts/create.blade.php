@@ -27,14 +27,14 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="image" class="col-md-4 col-form-label text-md-right">Image</label>
+                                <label for="images" class="col-md-4 col-form-label text-md-right">Images</label>
 
                                 <div class="col-md-6">
-                                    <input id="image" type="file"
-                                        class="form-control-file @error('image') is-invalid @enderror" name="image"
-                                        required>
+                                    <input id="images" type="file"
+                                        class="form-control-file @error('images') is-invalid @enderror" name="images[]"
+                                        multiple required>
 
-                                    @error('image')
+                                    @error('images')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
@@ -50,6 +50,7 @@
                                 </div>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>

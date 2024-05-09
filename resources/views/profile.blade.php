@@ -36,8 +36,11 @@
                             </b>
                         </div>
                         <div class="postimage">
-                            <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}">
+                            @foreach ($post->image_paths as $imagePath)
+                                <img src="{{ Storage::url($imagePath) }}" alt="{{ $post->caption }}">
+                            @endforeach
                         </div>
+
                         <div class="postDescription">
                             <div>
                                 <p>{{ $post->caption }}</p>
