@@ -5,11 +5,14 @@
             @foreach ($allPosts as $post)
                 <div class="post">
                     <div class="posttop">
-                        {{-- <img src="/images/catsleep.png"> --}}
-                        <img src="{{ $post->user->pfp ? asset('storage/' . $post->user->pfp) : '' }}"
-                            alt="{{ $post->user->username }}'s profile picture">
+                        <a href="{{ route('profile.show', $post->user) }}">
+                            <img src="{{ $post->user->pfp ? asset('storage/' . $post->user->pfp) : '' }}"
+                                alt="{{ $post->user->username }}'s profile picture">
+                        </a>
                         <b>
-                            <p>{{ $post->user->username }}</p>
+                            <a href="{{ route('profile.show', $post->user) }}">
+                                <p>{{ $post->user->username }}</p>
+                            </a>
                         </b>
 
                     </div>

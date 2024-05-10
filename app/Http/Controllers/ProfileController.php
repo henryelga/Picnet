@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 use Auth;
 
 
@@ -63,6 +64,13 @@ class ProfileController extends Controller
         $user = $user->fresh();
 
         return redirect()->route('profile')->with('success', 'Profile updated successfully.');
+    }
+
+    public function show(User $user)
+    {
+        $posts = $user->posts;
+
+        return view('profile', compact('user', 'posts'));
     }
 
 }

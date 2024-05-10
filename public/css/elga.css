@@ -7,7 +7,7 @@
 }
 
 body.auth-page {
-    background-image: url("https://cdn.discordapp.com/attachments/1030153058929352725/1237460420923752629/9f4dc7b6c5fa5c6804e84e4a19a8bedb.png?ex=663bba53&is=663a68d3&hm=b6c37602d8db888ca9fbd6a28d4b118e9b949921efc5f5988c921130a1ead5f5&");
+    background-image: url("/images/bg.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
