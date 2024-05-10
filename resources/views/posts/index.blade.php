@@ -9,12 +9,9 @@
                             <img src="{{ $post->user->pfp ? asset('storage/' . $post->user->pfp) : '' }}"
                                 alt="{{ $post->user->username }}'s profile picture">
                         </a>
-                        <b>
-                            <a href="{{ route('profile.show', $post->user) }}">
-                                <p>{{ $post->user->username }}</p>
-                            </a>
-                        </b>
-
+                        <a class="profileLink" href="{{ route('profile.show', $post->user) }}">
+                            <b><p>{{ $post->user->username }}</p></b>
+                        </a>
                     </div>
                     <div class="postimage">
                         <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}">
