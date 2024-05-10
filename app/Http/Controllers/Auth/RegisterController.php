@@ -85,7 +85,7 @@ class RegisterController extends Controller
         $profanityCheck = $profanityChecker->checkProfanity($data['username']);
 
         if ($profanityCheck['is-bad']) {
-            throw new \Exception('Username contains profanity');
+            throw new \Exception('We do not allow inappropriate usernames');
         }
 
         return User::create([

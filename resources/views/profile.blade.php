@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    @if (Auth::user())
         <div class="profileContainer">
             <div class="profileDetails">
                 <div class="pfpContainer">
@@ -74,7 +73,6 @@
                 <p>You have no posts yet.</p>
             @endif
         </div> <!-- end of profileContainer -->
-    @endif
 @endsection
 @push('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
