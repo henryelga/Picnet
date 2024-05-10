@@ -177,6 +177,10 @@ img {
     font-size: 14px;
 }
 
+.profileLink {
+    text-decoration: none;
+    color: black;
+}
 
 /* ======================================== Profile Page ===============================================*/
 
