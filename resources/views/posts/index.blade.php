@@ -37,8 +37,12 @@
                     <div class="post-comments">
                         <form action="{{ route('comments.store', $post) }}" method="POST">
                             @csrf
-                            <input type="text" name="content" placeholder="Add a comment" required>
-                            <button type="submit">Comment</button>
+                            <div class="comments-form">
+                                <input type="text" name="content" placeholder="Add a comment" required>
+                                <button type="submit">
+                                    <img src="{{ asset('images/submit.png') }}" alt="Submit">
+                                </button>
+                            </div>
                         </form>
                         {{-- <strong>Comments</strong> --}}
                         <ul>

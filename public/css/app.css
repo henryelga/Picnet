@@ -359,6 +359,34 @@ img {
     margin-top: 0;
 }
 
+.comments-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.comments-form input[type="text"] {
+    width: 96%;
+    padding: 12px 10px;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid #6362628f;
+    outline: none;
+}
+
+.comments-form button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.comments-form button img {
+    width: 20px;
+    height: 20px;
+}
+
 .post-comments ul {
     list-style-type: none;
     padding: 0;

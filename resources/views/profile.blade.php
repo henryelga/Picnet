@@ -51,7 +51,7 @@
                         <div class="postDescription">
                             <div>
                                 <p>{{ $post->caption }}</p>
-                                <p style="color: rgb(74, 74, 74);">{{ $post->created_at->diffForHumans() }}</p>
+                                <p style="color: rgb(74, 74, 74); font-size: small">{{ $post->created_at->diffForHumans() }}</p>
                             </div>
                             <div class="likeButtons">
                                 <button type="button" class="like-btn" data-post-id="{{ $post->id }}">
@@ -67,8 +67,12 @@
                         <div class="post-comments">
                             <form action="{{ route('comments.store', $post) }}" method="POST">
                                 @csrf
-                                <input type="text" name="content" placeholder="Add a comment" required>
-                                <button type="submit">Comment</button>
+                                <div class="comments-form">
+                                    <input type="text" name="content" placeholder="Add a comment" required>
+                                    <button type="submit">
+                                        <img src="{{ asset('images/submit.png') }}" alt="Submit">
+                                    </button>
+                                </div>
                             </form>
                             {{-- <strong>Comments</strong> --}}
                             <ul>
