@@ -10,7 +10,9 @@
                                 alt="{{ $post->user->username }}'s profile picture">
                         </a>
                         <a class="profileLink" href="{{ route('profile.show', $post->user) }}">
-                            <b><p>{{ $post->user->username }}</p></b>
+                            <b>
+                                <p>{{ $post->user->username }}</p>
+                            </b>
                         </a>
                     </div>
                     <div class="postimage">
@@ -32,6 +34,31 @@
                             <span class="like-count">{{ $post->likes()->count() }}</span>
                         </div>
                     </div>
+                </div>
+                <div class="post-comments">
+                    <h3>Comments</h3>
+                    <ul>
+                        @foreach ($post->comments as $comment)
+                            <li>
+                                <strong>{{ $comment->user->username }}</strong>: {{ $comment->content }}
+                                @if ($comment->user_id === Auth::id())
+                                    <div class="comment-actions">
+                                        <a href="{{ route('comments.edit', $comment) }}">Edit</a>
+                                        <form action="{{ route('comments.destroy', $comment) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit">Delete</button>
+                                        </form>
+                                    </div>
+                                @endif
+                            </li>
+                        @endforeach
+                    </ul>
+                    <form action="{{ route('comments.store', $post) }}" method="POST">
+                        @csrf
+                        <input type="text" name="content" placeholder="Add a comment" required>
+                        <button type="submit">Comment</button>
+                    </form>
                 </div>
             @endforeach
         @else

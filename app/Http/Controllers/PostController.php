@@ -12,14 +12,15 @@ class PostController extends Controller
     {
         $user = Auth::user();
         if ($user) {
-            $posts = $user->posts;
-            $allPosts = Post::all();
+            $posts = $user->posts()->with('comments.user')->get();
+            $allPosts = Post::with('comments.user')->get();
             return view('posts.index', compact('posts', 'allPosts'));
         } else {
-            $allPosts = Post::all();
+            $allPosts = Post::with('comments.user')->get();
             return view('posts.index', compact('allPosts'));
         }
     }
+
 
     public function create()
     {

@@ -40,4 +40,9 @@ class Post extends Model
         }
         return false;
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
