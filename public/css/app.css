@@ -56,7 +56,7 @@ img {
 .loginbutton {
     background-color: white;
     border: 2px solid #5839FC;
-    color: #5839FC; 
+    color: #5839FC;
 }
 
 .guestbutton {
@@ -215,7 +215,7 @@ img {
     margin-left: 20px;
     text-decoration: none;
     color: black;
-    background-color:  #F7F7F7;
+    background-color: #F7F7F7;
     border: 1px solid rgb(209, 209, 209);
     padding: 5px 10px;
     border-radius: 30px;
@@ -344,4 +344,47 @@ img {
     width: 100%;
     justify-content: center;
     align-items: center;
+}
+
+/* ======================================= Comments ================================================== */
+
+.post-comments {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 10px;
+}
+
+.post-comments h3 {
+    margin-top: 0;
+}
+
+.post-comments ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post-comments li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-actions {
+    display: flex;
+    align-items: center;
+}
+
+.comment-actions a,
+.comment-actions form button {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+}
+
+.comment-actions form {
+    display: inline;
 }
