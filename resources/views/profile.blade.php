@@ -64,8 +64,12 @@
                                 <span class="like-count">{{ $post->likes()->count() }}</span>
                             </div>
                         </div>
-
                         <div class="post-comments">
+                            <form action="{{ route('comments.store', $post) }}" method="POST">
+                                @csrf
+                                <input type="text" name="content" placeholder="Add a comment" required>
+                                <button type="submit">Comment</button>
+                            </form>
                             {{-- <strong>Comments</strong> --}}
                             <ul>
                                 @foreach ($post->comments as $comment)
@@ -93,11 +97,6 @@
                                     </li>
                                 @endforeach
                             </ul>
-                            <form action="{{ route('comments.store', $post) }}" method="POST">
-                                @csrf
-                                <input type="text" name="content" placeholder="Add a comment" required>
-                                <button type="submit">Comment</button>
-                            </form>
                         </div>
                     </div>
                 @endforeach
