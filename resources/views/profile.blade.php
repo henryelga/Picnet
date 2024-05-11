@@ -36,11 +36,19 @@
                             </b>
                         </div>
                         <div class="postimage">
-                            @foreach ($post->image_paths as $imagePath)
-                                <img src="{{ Storage::url($imagePath) }}" alt="{{ $post->caption }}">
-                            @endforeach
+                            <button class="prev-btn">
+                                <i class="fas fa-arrow-left"></i>
+                            </button>
+                            <div class="image-container">
+                                @foreach ($post->image_paths as $imagePath)
+                                    <img src="{{ Storage::url($imagePath) }}" alt="{{ $post->caption }}"
+                                        class="post-image">
+                                @endforeach
+                            </div>
+                            <button class="next-btn">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
                         </div>
-
                         <div class="postDescription">
                             <div>
                                 <p>{{ $post->caption }}</p>
@@ -67,7 +75,36 @@
 @push('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
+        document.addEventListener('DOMContentLoaded', () => {
+            const prevBtns = document.querySelectorAll('.prev-btn');
+            const nextBtns = document.querySelectorAll('.next-btn');
+            const imageContainers = document.querySelectorAll('.image-container');
+
+            imageContainers.forEach((container, index) => {
+                const images = container.querySelectorAll('.post-image');
+                let currentIndex = 0;
+
+                // Event listener for previous button
+                prevBtns[index].addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    scrollToImage(container, currentIndex);
+                });
+
+                // Event listener for next button
+                nextBtns[index].addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    scrollToImage(container, currentIndex);
+                });
+            });
+
+            function scrollToImage(container, index) {
+                const images = container.querySelectorAll('.post-image');
+                images[index].scrollIntoView({
+                    behavior: 'smooth',
+                    inline: 'center'
+                });
+            }
+
             $('.like-btn').click(function(e) {
                 e.preventDefault();
                 var postId = $(this).data('post-id');
@@ -92,8 +129,7 @@
                         error: function(xhr, status, error) {
                             console.error(error);
                             alert(
-                                'An error occurred while processing your request. Please try again later.'
-                            );
+                                'An error occurred while processing your request. Please try again later.');
                         }
                     });
                 } else {
@@ -111,9 +147,7 @@
                         },
                         // error: function(xhr, status, error) {
                         //     console.error(error);
-                        //     alert(
-                        //         'An error occurred while processing your request. '
-                        //     );
+                        //     alert('An error occurred while processing your request.');
                         // }
                     });
                 }
