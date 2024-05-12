@@ -59,12 +59,12 @@
                                             <div class="dropdown">
                                                 <button class="dropbtn">&hellip;</button>
                                                 <div class="dropdown-content">
-                                                        <form action="{{ route('comments.destroy', $comment) }}"
-                                                            method="POST">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button type="submit">Delete</button>
-                                                        </form>
+                                                    <form action="{{ route('comments.destroy', $comment) }}"
+                                                        method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit">Delete</button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

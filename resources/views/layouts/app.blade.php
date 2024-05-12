@@ -98,6 +98,7 @@
         </div>
         @yield('content')
     </div>
+    @include('layouts.bottomnav')
     @stack('scripts')
 
 </body>

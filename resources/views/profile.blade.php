@@ -31,21 +31,21 @@
                             <b>
                                 <p>{{ $post->user->username }}</p>
                             </b>
-                                @if ($user->id === auth()->id())
-                            <div class="postActions">
-                                <div class="dropdown">
-                                    <button class="dropbtn">&hellip;</button>
-                                    <div class="dropdown-content">
-                                        <a href="{{ route('posts.edit', $post) }}">Edit</a>
-                                        <form action="{{ route('posts.destroy', $post) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="deletePostButton" type="submit">Delete</button>
-                                        </form>
+                            @if ($user->id === auth()->id())
+                                <div class="postActions">
+                                    <div class="dropdown">
+                                        <button class="dropbtn">&hellip;</button>
+                                        <div class="dropdown-content">
+                                            <a href="{{ route('posts.edit', $post) }}">Edit</a>
+                                            <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="deletePostButton" type="submit">Delete</button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                                @endif
+                            @endif
                         </div>
                         <div class="postimage">
                             <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}">
@@ -53,7 +53,8 @@
                         <div class="postDescription">
                             <div>
                                 <p>{{ $post->caption }}</p>
-                                <p style="color: rgb(74, 74, 74); font-size: small">{{ $post->created_at->diffForHumans() }}</p>
+                                <p style="color: rgb(74, 74, 74); font-size: small">
+                                    {{ $post->created_at->diffForHumans() }}</p>
                             </div>
                             <div class="likeButtons">
                                 <button type="button" class="like-btn" data-post-id="{{ $post->id }}">
@@ -72,7 +73,8 @@
                                 <div class="comments-form">
                                     <input type="text" name="content" placeholder="Add a comment" required>
                                     <button type="submit">
-                                        <img src="{{ asset('https://img.icons8.com/fluency-systems-regular/48/1A1A1A/sent--v1.png') }}" alt="Submit">
+                                        <img src="{{ asset('https://img.icons8.com/fluency-systems-regular/48/1A1A1A/sent--v1.png') }}"
+                                            alt="Submit">
                                     </button>
                                 </div>
                             </form>
