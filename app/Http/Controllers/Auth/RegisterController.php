@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 use App\Services\ProfanityChecker;
 use Illuminate\Http\Request;
@@ -112,6 +113,8 @@ class RegisterController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->withErrors(['username' => $e->getMessage()]);
         }
+
+        Auth::login($user);
 
         return $this->registered($request, $user)
             ?: redirect($this->redirectPath());

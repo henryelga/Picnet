@@ -41,12 +41,12 @@ img {
     margin: 5px;
 }
 
-.reglogcontainer {
+.welcomeButtonsContainer {
     display: flex;
     flex-direction: row;
 }
 
-.reglogcontainer a {
+.welcomeButtonsContainer a {
     font-size: 20px;
     margin-right: 5px;
     margin-bottom: 5px;
