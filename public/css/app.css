@@ -224,9 +224,9 @@ img {
     position: absolute;
     display: flex;
     text-align: center;
-    right: 10px;
     align-items: center;
     justify-content: center;
+    right: 10px;
 }
 
 .dropdown {
@@ -402,21 +402,4 @@ img {
     justify-content: space-between;
     align-items: center;
     transform: rotate(-180deg);
-}
-
-.comment-actions {
-    display: flex;
-    align-items: center;
-}
-
-.comment-actions a,
-.comment-actions form button {
-    margin-left: 10px;
-    text-decoration: none;
-    color: #666;
-    font-size: 14px;
-}
-
-.comment-actions form {
-    display: inline;
 }
