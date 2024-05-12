@@ -8,6 +8,7 @@ use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\CommentController;
+use App\Http\Middleware\UserMiddleware;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,14 +21,14 @@ Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create')->middleware(UserMiddleware::class);;
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::get('/editprofile', [ProfileController::class, 'showProfile'])->name('editprofile');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware(UserMiddleware::class);
+Route::get('/editprofile', [ProfileController::class, 'showProfile'])->name('editprofile')->middleware(UserMiddleware::class);
 Route::put('/profile', [ProfileController::class, 'updateProfile'])->name('profile.update');
 
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');

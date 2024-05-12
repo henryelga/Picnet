@@ -31,6 +31,7 @@
                             <b>
                                 <p>{{ $post->user->username }}</p>
                             </b>
+                            @auth
                             @if ($user->id === auth()->id() || auth()->user()->isAdmin())
                                 <div class="postActions">
                                     <div class="dropdown">
@@ -46,6 +47,7 @@
                                     </div>
                                 </div>
                             @endif
+                            @endauth
                         </div>
                         <div class="postimage">
                             <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}">
