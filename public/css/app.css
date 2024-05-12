@@ -79,7 +79,7 @@ img {
     justify-content: center;
     background-color: rgb(255, 255, 255);
     box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
-    padding-right: 150px;
+    padding-right: 10vw;
     font-size: 20px;
 }
 
@@ -295,6 +295,7 @@ img {
     flex-direction: column;
     width: 100%;
     margin: 100px;
+    min-height: 100vh;
 }
 
 .dashboardTable {
@@ -342,6 +343,7 @@ img {
     width: 100%;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
 /* ======================================= Comments ================================================== */
