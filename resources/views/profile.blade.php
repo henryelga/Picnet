@@ -32,6 +32,7 @@
                                 <b>
                                     <p>{{ $post->user->username }}</p>
                                 </b>
+                                @if ($user->id === auth()->id())
                                 <div class="postActions">
                                     <div class="dropdown">
                                         <button class="dropbtn">&hellip;</button>
@@ -45,6 +46,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                             </div>
                             <div class="postimage">
                                 <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}">
