@@ -35,6 +35,7 @@
                         </div>
                     </div>
                     <div class="post-comments">
+                        @auth
                         <form action="{{ route('comments.store', $post) }}" method="POST">
                             @csrf
                             <div class="comments-form">
@@ -44,6 +45,7 @@
                                 </button>
                             </div>
                         </form>
+                        @endauth
                         {{-- <strong>Comments</strong> --}}
                         <ul>
                             @foreach ($post->comments as $comment)
