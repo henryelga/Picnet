@@ -348,10 +348,8 @@ img {
 /* ======================================= Comments ================================================== */
 
 .post-comments {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 0 15px 0px 15px;
+    margin-bottom: 5px;
 }
 
 .post-comments h3 {
@@ -395,7 +393,7 @@ img {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    /* transform: rotate(180deg); */
+    transform: rotate(180deg);
 }
 
 .post-comments li {
@@ -403,7 +401,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* transform: rotate(-180deg); */
+    transform: rotate(-180deg);
 }
 
 .comment-actions {
