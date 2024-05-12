@@ -127,6 +127,8 @@ img {
 .postimage img {
     width: 500px;
     height: auto;
+    max-height: 800px;
+    object-fit: cover;
 }
 
 .posttop {
