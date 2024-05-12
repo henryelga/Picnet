@@ -189,8 +189,8 @@ img {
 }
 
 .postsTitle {
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 12vw;
+    margin-right: 12vw;
     border-bottom: 1px solid #ddd;
 }
 
@@ -426,7 +426,7 @@ img {
     align-items: center;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 800px) {
     .sidenav {
         display: none;
     }
@@ -439,5 +439,16 @@ img {
 
     .postimage img {
         width: 350px;
+    }
+
+    .profileDetails {
+        margin-left: 0px;
+        margin-right: 0px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pfpContainer img {
+        margin: auto;
     }
 }
