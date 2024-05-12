@@ -395,7 +395,7 @@ img {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    transform: rotate(180deg);
+    /* transform: rotate(180deg); */
 }
 
 .post-comments li {
@@ -403,7 +403,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transform: rotate(-180deg);
+    /* transform: rotate(-180deg); */
 }
 
 .comment-actions {
