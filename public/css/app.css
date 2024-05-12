@@ -534,6 +534,23 @@ img {
 .dashboardTable th {
     padding: 2px 8px;
     text-align: left;
+    background-color: #EAADCA;
+}
+
+.dashboardTable th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.dashboardTable th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.dashboardTable tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+.dashboardTable tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
 }
 
 .dashboardTable tbody tr:nth-child(odd) {
