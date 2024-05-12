@@ -20,7 +20,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/elga.css') }}" rel="stylesheet">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

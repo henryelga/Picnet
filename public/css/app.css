@@ -21,13 +21,25 @@ img {
 /* ======================================== Welcome Page ===============================================*/
 
 .welcomeContainer {
+    background-image: url("/images/bg.png");
     width: 100vw;
     height: 100vh;
-    background-color: rgb(224, 224, 224);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.welcomeWrapper {
+    padding: 50px;
+    background-color: white;
+    text-align: center;
+    border-radius: 40px;
+}
+
+.welcomeWrapper img {
+    height: 50px;
+    margin-bottom: 20px;
 }
 
 .buttonContainer {
@@ -56,14 +68,15 @@ img {
 }
 
 .registerbutton {
-    background-color: #5839FC;
+    background: rgb(188,100,186);
+    background: linear-gradient(90deg, rgba(188,100,186,1) 0%, rgba(226,131,186,1) 50%, rgba(241,205,214,1) 100%);
     color: white;
 }
 
 .loginbutton {
     background-color: white;
-    border: 2px solid #5839FC;
-    color: #5839FC;
+    border: 2px solid rgb(188,100,186);
+    color: rgb(188,100,186);
 }
 
 .guestbutton {
@@ -114,7 +127,7 @@ img {
 .card input[type="password"],
 .card input[type="email"] {
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.036);
+    background-color: rgba(0, 0, 0, 0.15);
     backdrop-filter: blur(10px);
 }
 

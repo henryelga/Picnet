@@ -19,13 +19,15 @@
 
 <body>
     <div class="welcomeContainer">
-        <h1>Picnet</h1>
-        <div class="buttonContainer">
-            <div class="welcomeButtonsContainer">
-                <a class="registerbutton" href="{{ route('register') }}">Register</a>
-                <a class="loginbutton" href="{{ route('login') }}">Login</a>
+        <div class="welcomeWrapper">
+            <img src="images/picnet.png">
+            <div class="buttonContainer">
+                <div class="welcomeButtonsContainer">
+                    <a class="registerbutton" href="{{ route('register') }}">Register</a>
+                    <a class="loginbutton" href="{{ route('login') }}">Login</a>
+                </div>
+                <a class="guestbutton" href="{{ route('posts.index') }}">Continue as guest</a>
             </div>
-            <a class="guestbutton" href="{{ route('posts.index') }}">Continue as guest</a>
         </div>
     </div>
 </body>
