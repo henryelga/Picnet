@@ -10,7 +10,9 @@
                                 alt="{{ $post->user->username }}'s profile picture">
                         </a>
                         <a class="profileLink" href="{{ route('profile.show', $post->user) }}">
-                            <b><p>{{ $post->user->username }}</p></b>
+                            <b>
+                                <p>{{ $post->user->username }}</p>
+                            </b>
                         </a>
                     </div>
                     <div class="postimage">
@@ -31,6 +33,44 @@
                             </button>
                             <span class="like-count">{{ $post->likes()->count() }}</span>
                         </div>
+                    </div>
+                    <div class="post-comments">
+                        <form action="{{ route('comments.store', $post) }}" method="POST">
+                            @csrf
+                            <div class="comments-form">
+                                <input type="text" name="content" placeholder="Add a comment" required>
+                                <button type="submit">
+                                    <img src="{{ asset('images/submit.png') }}" alt="Submit">
+                                </button>
+                            </div>
+                        </form>
+                        {{-- <strong>Comments</strong> --}}
+                        <ul>
+                            @foreach ($post->comments as $comment)
+                                <li>
+                                    <div>
+                                        <strong>{{ $comment->user->username }}</strong>: {{ $comment->content }}
+                                    </div>
+                                    @if ($comment->user_id === Auth::id())
+                                        <div class="postActions">
+                                            <div class="dropdown">
+                                                <button class="dropbtn">&hellip;</button>
+                                                <div class="dropdown-content">
+                                                    <div class="comment-actions">
+                                                        <form action="{{ route('comments.destroy', $comment) }}"
+                                                            method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit">Delete</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             @endforeach
