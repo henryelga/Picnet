@@ -110,7 +110,7 @@
                 @endforeach
             </div>
         @else
-            <p>You have no posts yet.</p>
+                <p style="margin-left: 12vw">You have no posts yet.</p>
         @endif
     </div> <!-- end of profileContainer -->
 @endsection
