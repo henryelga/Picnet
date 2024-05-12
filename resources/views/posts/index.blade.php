@@ -14,6 +14,20 @@
                                 <p>{{ $post->user->username }}</p>
                             </b>
                         </a>
+                        @admin
+                        <div class="postActions">
+                            <div class="dropdown">
+                                <button class="dropbtn">&hellip;</button>
+                                <div class="dropdown-content">
+                                    <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="deletePostButton" type="submit">Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        @endadmin
                     </div>
                     <div class="postimage">
                         <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}">

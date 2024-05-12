@@ -31,7 +31,7 @@
                             <b>
                                 <p>{{ $post->user->username }}</p>
                             </b>
-                            @if ($user->id === auth()->id())
+                            @if ($user->id === auth()->id() || auth()->user()->isAdmin())
                                 <div class="postActions">
                                     <div class="dropdown">
                                         <button class="dropbtn">&hellip;</button>
