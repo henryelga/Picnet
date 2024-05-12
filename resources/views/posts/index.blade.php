@@ -36,15 +36,16 @@
                     </div>
                     <div class="post-comments">
                         @auth
-                        <form action="{{ route('comments.store', $post) }}" method="POST">
-                            @csrf
-                            <div class="comments-form">
-                                <input type="text" name="content" placeholder="Add a comment" required>
-                                <button type="submit">
-                                    <img src="{{ asset('images/submit.png') }}" alt="Submit">
-                                </button>
-                            </div>
-                        </form>
+                            <form action="{{ route('comments.store', $post) }}" method="POST">
+                                @csrf
+                                <div class="comments-form">
+                                    <input type="text" name="content" placeholder=" Add a comment" required>
+                                    <button type="submit">
+                                        <img src="{{ asset('https://img.icons8.com/fluency-systems-regular/48/1A1A1A/sent--v1.png') }}"
+                                            alt="Submit">
+                                    </button>
+                                </div>
+                            </form>
                         @endauth
                         {{-- <strong>Comments</strong> --}}
                         <ul>

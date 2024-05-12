@@ -156,7 +156,6 @@ img {
 
 .likeButtons {
     display: flex;
-    /* align-items: center; */
     flex-direction: column;
 }
 
@@ -352,7 +351,7 @@ img {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 0 10px 10px 10px;
+    padding: 0 15px 0px 15px;
 }
 
 .post-comments h3 {
@@ -367,12 +366,13 @@ img {
 }
 
 .comments-form input[type="text"] {
-    width: 96%;
+    width: 92%;
     padding: 12px 10px;
     font-size: 14px;
-    border: none;
-    border-bottom: 1px solid #6362628f;
+    border: 1px solid #6362628f;
+    border-radius: 20px;
     outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .comments-form button {
@@ -383,8 +383,12 @@ img {
 }
 
 .comments-form button img {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
+}
+
+.comments-form button:hover img {
+    content: url('https://img.icons8.com/fluency-systems-filled/48/1A1A1A/sent.png');
 }
 
 .post-comments ul {
