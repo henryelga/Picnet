@@ -37,7 +37,7 @@
     <div class="mainContainer">
         <div class="logo">
             <a href="/posts">
-                <img src="images/picnet.png">
+                <img src="/images/picnet.png">
             </a>
         </div>
         <div class="sidenav">
