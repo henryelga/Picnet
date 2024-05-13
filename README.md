@@ -1,12 +1,12 @@
 # Picnet
 
-Picnet is a visually-focused social media platform that allows users to create, share, and discover stunning visual content. Picnet prioritizes multimedia, enabling users to build profiles, upload original artwork, and interact through likes and comments. With a clean interface and an immersive visual experience, Picnet fosters a thriving community centered around the appreciation of creative visual expression.
+Picnet is a visually-focused social media platform that allows users to create, share, and discover stunning visual content. Picnet prioritises multimedia, enabling users to build profiles, upload original artwork, and interact through likes and comments. With a clean interface and an immersive visual experience, Picnet fosters a thriving community centered around the appreciation of creative visual expression.
 
 
 
 ## Table of Contents
-- [About](#about)
-- [Picnet Snaps](#picnet-snaps)
+- 🔎 [About](#about-)
+- 📸 [Picnet Snaps](#picnet-snaps-)
     - [Welcome Screen](#welcome-screen)
     - [Home Feed](#home-feed)
     - [Change Theme](#change-theme)
@@ -16,21 +16,21 @@ Picnet is a visually-focused social media platform that allows users to create, 
     - [Edit Post](#edit-post)
     - [Admin Dashboard](#admin-dashboard)
     - [Responsive](#responsive)
-- [Authors](#authors-)
-- [Technologies Used](#technologies-used)
-- [CRUD Functionalities](#crud-functionalities)
-- [Validation and Authorization](#validation-and-authorization)
-- [Usage](#usage-️)
+- 👥 [Authors](#authors-)
+- 🚀 [Technologies Used](#technologies-used-)
+- 💾 [CRUD Functionalities](#crud-functionalities-)
+- 🤖 [Validation and Authorisation](#validation-and-authorisation-)
+- 🛠️ [Usage](#usage-️)
     - [Setting up your development environment](#setting-up-your-development-environment-on-your-local-machine)
-    - [Before Starting](#before-starting-)
+- 👩‍💻 [Before Starting](#before-starting-)
     - [Creating a database](#create-a-database)
     - [Configuring the database](#setup-your-database-credentials-in-the-env-file)
     - [Migrating the tables](#migrate-the-tables)
 
-## About
+## About 🔎
 Picnet is a social media platform that we developed as a way to challenge ourselves and expand our skills in server-side web development. We built Picnet from scratch using PHP, the Laravel framework, HTML, CSS and Javascript. Through the development of this project we had the opportunity to deeply refine our abilities in areas such as database management, API integration, user authentication, form validation, and front-end user experience design. We were able to demonstrate our knowledge of the Model-View-Controller architecture. It was a rewarding journey that allowed us to push the boundaries of our technical knowledge and problem-solving skills.
 
-## Picnet Snaps
+## Picnet Snaps 📸
 ### Welcome Screen
 <img src="https://i.ibb.co/V3dd5mK/image.png"><br>
 ### Home Feed
@@ -56,7 +56,7 @@ Picnet is a social media platform that we developed as a way to challenge oursel
 - [Mila Murphy](https://github.com/milamurphy)
 - [Elga Jerusha Henry](https://github.com/henryelga)
 
-## Technologies Used 
+## Technologies Used 🚀
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white) 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
@@ -65,7 +65,7 @@ Picnet is a social media platform that we developed as a way to challenge oursel
 ![XAMPP](https://img.shields.io/badge/Xampp-F37623?style=for-the-badge&logo=xampp&logoColor=white)
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-## CRUD Functionalities
+## CRUD Functionalities 💾
 
 | Functionality | Guests | Users | Admins |
 | --- | --- | --- | --- |
@@ -87,14 +87,14 @@ Picnet is a social media platform that we developed as a way to challenge oursel
 | View user profiles from dashboard | - | - | ✅ |
 | Delete users | - | - | ✅ |
 
-## Validation and Authorization
+## Validation and Authorisation 🤖
 Picnet has strict validation requirements to ensure the safety and integrity of the platform:
-- Passwords must be at least 8 characters long
 - Passwords are encrypted
-- Email and username must be unique
+- Passwords must be at least 8 characters long
+- Email and username must not already be in use upon account creation and when updating profile
 - Usernames are checked against a [Bad Words API](https://rapidapi.com/neutrinoapi/api/bad-word-filter/) to prevent the use of inappropriate content
   
-Users must be authenticated to access the full range of features on Picnet. The platform uses a robust authorization system to ensure that only authorized users can perform actions such as creating, editing, and deleting their own content.
+Users must be authenticated to access the full range of features on Picnet. The platform uses a robust authorisation system to ensure that only authorised users can perform actions such as creating, editing, and deleting their own content. Only admins can access the admin dashboard and have the ability to delete any user or their posts and comments.
 
 ## Usage 🛠️<br>
 ### Setting up your development environment on your local machine
