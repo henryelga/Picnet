@@ -1,4 +1,4 @@
-# Picnet <img src="https://github.com/henryelga/laravel-socialMedia-clone/assets/67817308/a5f36ab7-5312-482b-adf8-608d8d934276" height="50">
+# Picnet
 
 Picnet is a visually-focused social media platform that allows users to create, share, and discover stunning visual content. Picnet prioritizes multimedia, enabling users to build profiles, upload original artwork, and interact through likes and comments. With a clean interface and an immersive visual experience, Picnet fosters a thriving community centered around the appreciation of creative visual expression.
 
