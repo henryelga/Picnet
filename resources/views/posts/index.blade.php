@@ -73,6 +73,7 @@
                                     <div>
                                         <strong>{{ $comment->user->username }}</strong>: {{ $comment->content }}
                                     </div>
+                                    @auth
                                     @if ($comment->user_id === Auth::id() || auth()->user()->isAdmin())
                                         <div class="postActions">
                                             <div class="dropdown">
@@ -88,6 +89,7 @@
                                             </div>
                                         </div>
                                     @endif
+                                    @endauth
                                 </li>
                             @endforeach
                         </ul>
