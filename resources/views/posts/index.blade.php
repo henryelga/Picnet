@@ -68,7 +68,7 @@
                                     <div>
                                         <strong>{{ $comment->user->username }}</strong>: {{ $comment->content }}
                                     </div>
-                                    @if ($comment->user_id === Auth::id())
+                                    @if ($comment->user_id === Auth::id() || auth()->user()->isAdmin())
                                         <div class="postActions">
                                             <div class="dropdown">
                                                 <button class="dropbtn">&hellip;</button>

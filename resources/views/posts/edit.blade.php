@@ -2,45 +2,31 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Edit Post</div>
+        <div class="formcard">
+            <div class="formcard-header">Edit Post</div>
 
-                    <div class="card-body">
-                        <div class="postimage">
-                            <img src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}" class="img-fluid">
-                        </div>
+            <div class="formcard-body">
+                <img style="max-height: 400px; max-width: 300px; margin-left: 8%" src="{{ Storage::url($post->image_path) }}" alt="{{ $post->caption }}">
 
-                        <form method="POST" action="{{ route('posts.update', $post) }}" enctype="multipart/form-data">
-                            @csrf
-                            @method('PUT')
+                <form method="POST" action="{{ route('posts.update', $post) }}" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
 
-                            <div class="form-group row">
-                                <label for="caption" class="col-md-4 col-form-label text-md-right">Caption</label>
+                    <label for="caption" class="col-md-4 col-form-label text-md-right">Caption</label>
 
-                                <div class="col-md-6">
-                                    <textarea id="caption" type="text" class="form-control @error('caption') is-invalid @enderror" name="caption"
-                                        required autocomplete="caption" autofocus>{{ $post->caption }}</textarea>
+                    <textarea id="caption" type="text" class="form-control @error('caption') is-invalid @enderror" name="caption"
+                        required autocomplete="caption" autofocus>{{ $post->caption }}</textarea>
 
-                                    @error('caption')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                            </div>
+                    @error('caption')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 
-                            <div class="form-group row mb-0">
-                                <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Update Post
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                    <button type="submit" class="formbtn-primary">
+                        Update Post
+                    </button>
+                </form>
             </div>
         </div>
     </div>

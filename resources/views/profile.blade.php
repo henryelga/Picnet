@@ -37,7 +37,9 @@
                                     <div class="dropdown">
                                         <button class="dropbtn">&hellip;</button>
                                         <div class="dropdown-content">
+                                            @if ($user->id === auth()->id())
                                             <a href="{{ route('posts.edit', $post) }}">Edit</a>
+                                            @endif
                                             <form action="{{ route('posts.destroy', $post) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
@@ -87,7 +89,8 @@
                                         <div>
                                             <strong>{{ $comment->user->username }}</strong>: {{ $comment->content }}
                                         </div>
-                                        @if ($comment->user_id === Auth::id())
+                                        @auth
+                                        @if ($comment->user_id === Auth::id() || auth()->user()->isAdmin())
                                             <div class="postActions">
                                                 <div class="dropdown">
                                                     <button class="dropbtn">&hellip;</button>
@@ -104,6 +107,7 @@
                                                 </div>
                                             </div>
                                         @endif
+                                        @endauth
                                     </li>
                                 @endforeach
                             </ul>

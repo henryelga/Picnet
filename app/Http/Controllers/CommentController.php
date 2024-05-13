@@ -51,7 +51,7 @@ class CommentController extends Controller
     public function destroy(Comment $comment)
     {
         // Check if the authenticated user owns the comment
-        if ($comment->user_id === Auth::id()) {
+        if ($comment->user_id === Auth::id() || auth()->user()->isAdmin()) {
             $comment->delete();
             return redirect()->back()->with('success', 'Comment deleted successfully.');
         } else {
