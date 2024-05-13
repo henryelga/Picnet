@@ -6,7 +6,7 @@ Picnet is a visually-focused social media platform that allows users to create, 
 
 ## Table of Contents
 - [About](#about)
-- [Picnet Snaps](#picnet-snaps)
+- [Picnet Snaps](#picnet-snaps)  
 - [Authors](#authors-)
 - [Technologies Used](#technologies-used)
 - [CRUD Functionalities](#crud-functionalities)
@@ -21,18 +21,38 @@ Picnet is a visually-focused social media platform that allows users to create, 
 ## About
 
 ## Picnet Snaps
+### Welcome Screen
+<img src="https://i.ibb.co/V3dd5mK/image.png"><br>
+### Home Feed
+<img src="https://i.ibb.co/j4zNy7c/image.png"><br>
+### Change Theme
+<img src="https://i.ibb.co/6HxTB2n/image.png"><br>
+### Create Post
+<img src="https://i.ibb.co/VL3DnWd/image.png"><br>
+### Profile Page
+<img src="https://github.com/henryelga/laravel-socialMedia-clone/assets/111306604/c61e577b-03bb-45f4-a6cb-999c63ec7254"><br>
+### Edit Profile
+<img src="https://github.com/henryelga/laravel-socialMedia-clone/assets/111306604/accf9a0e-4754-4563-b6b0-a8576347a2b1"><br>
+### Edit Post
+<img src="https://github.com/henryelga/laravel-socialMedia-clone/assets/111306604/17f8dd82-e578-4d89-84a5-aadfff599947"><br>
+<img src="https://github.com/henryelga/laravel-socialMedia-clone/assets/111306604/47a26c3c-5ee7-4ffd-8bc2-a0e130478a58"><br>
+### Admin Dashboard
+<img src="https://github.com/henryelga/laravel-socialMedia-clone/assets/111306604/6eac6edd-c69f-4d1f-b0f4-dc072af334ca"><br>
+### Responsive
+<img src="https://i.ibb.co/LhjcKXf/app.png"><br>
+
 
 ## Authors 👥
 - [Mila Murphy](https://github.com/milamurphy)
 - [Elga Jerusha Henry](https://github.com/henryelga)
 
 ## Technologies Used 
-![XAMPP](https://img.shields.io/badge/Xampp-F37623?style=for-the-badge&logo=xampp&logoColor=white)
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white) 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![XAMPP](https://img.shields.io/badge/Xampp-F37623?style=for-the-badge&logo=xampp&logoColor=white)
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
 ## CRUD Functionalities
