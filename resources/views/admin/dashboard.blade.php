@@ -22,10 +22,13 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>
+                            <form action="{{ route('profile.show', $user->id) }}" method="GET" style="display: inline;">
+                                <button class="adminUsersButton" type="submit"><img src="https://img.icons8.com/fluency-systems-filled/48/228BE6/visible.png" alt="view icon"/></button>
+                            </form>
                             <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="deleteUsersButton" type="submit"><img src="https://img.icons8.com/fluency-systems-filled/48/FA5252/trash.png" alt="delete icon"/></button>
+                                <button class="adminUsersButton" type="submit"><img src="https://img.icons8.com/fluency-systems-filled/48/FA5252/trash.png" alt="delete icon"/></button>
                             </form>
                         </td>
                     </tr>

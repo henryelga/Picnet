@@ -561,7 +561,7 @@ img {
     background-color: #f2f2f2;
 }
 
-.deleteUsersButton {
+.adminUsersButton {
     cursor: pointer;
     text-decoration: none;
     display: block;
@@ -573,7 +573,7 @@ img {
     margin-top: 15px;
 }
 
-.deleteUsersButton img {
+.adminUsersButton img {
     height: 20px;
 }
 
