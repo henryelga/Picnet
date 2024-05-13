@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('content')
     <div class="postsContainer">
+        <div class="colourCirclesContainer">
+            <div class="circle default selected"></div>
+            <div class="circle pink"></div>
+            <div class="circle dark"></div>
+        </div>
         @if (isset($allPosts) && count($allPosts))
             @foreach ($allPosts as $post)
                 <div class="post">
@@ -15,18 +20,18 @@
                             </b>
                         </a>
                         @admin
-                        <div class="postActions">
-                            <div class="dropdown">
-                                <button class="dropbtn">&hellip;</button>
-                                <div class="dropdown-content">
-                                    <form action="{{ route('posts.destroy', $post) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="deletePostButton" type="submit">Delete</button>
-                                    </form>
+                            <div class="postActions">
+                                <div class="dropdown">
+                                    <button class="dropbtn">&hellip;</button>
+                                    <div class="dropdown-content">
+                                        <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="deletePostButton" type="submit">Delete</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endadmin
                     </div>
                     <div class="postimage">
@@ -147,6 +152,26 @@
                         // }
                     });
                 }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const circles = document.querySelectorAll('.circle');
+            const body = document.querySelector('body');
+
+            circles.forEach(circle => {
+                circle.addEventListener('click', function() {
+                    const style = window.getComputedStyle(this);
+                    const bgColor = style.backgroundColor;
+
+                    document.querySelectorAll('.circle').forEach(circle => {
+                        circle.classList.remove('selected');
+                    });
+
+                    this.classList.add('selected');
+
+                    body.style.backgroundColor = bgColor;
+                });
             });
         });
     </script>

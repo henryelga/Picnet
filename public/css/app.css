@@ -77,7 +77,7 @@ img {
 
 .registerbutton {
     background: #BF67BA;
-    background: linear-gradient(90deg, rgba(188,100,186,1) 0%, rgba(226,131,186,1) 50%, rgba(241,205,214,1) 100%);
+    background: linear-gradient(90deg, rgba(188, 100, 186, 1) 0%, rgba(226, 131, 186, 1) 50%, rgba(241, 205, 214, 1) 100%);
     color: white;
 }
 
@@ -262,6 +262,38 @@ img {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
+}
+
+.colourCirclesContainer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 3px;
+}
+
+.default {
+    background-color: rgb(247, 247, 247);
+}
+
+.pink {
+    background-color: rgb(255, 220, 237);
+}
+
+.dark {
+    background-color: rgb(40, 40, 42);
+}
+
+.selected {
+    border: 1px solid black;
 }
 
 .post {
@@ -459,8 +491,8 @@ img {
 }
 
 .formcard-header {
-    background: rgb(188,100,186);
-    background: linear-gradient(90deg, rgba(188,100,186,1) 0%, rgba(226,131,186,1) 50%, rgba(241,205,214,1) 100%);
+    background: rgb(188, 100, 186);
+    background: linear-gradient(90deg, rgba(188, 100, 186, 1) 0%, rgba(226, 131, 186, 1) 50%, rgba(241, 205, 214, 1) 100%);
     color: white;
     padding: 16px;
     border-top-left-radius: 8px;
@@ -698,5 +730,15 @@ img {
 
     .logo {
         display: none;
+    }
+
+    .colourCirclesContainer {
+        flex-direction: column;
+        left: 10px;
+    }
+
+    .circle {
+        height: 15px;
+        width: 15px;
     }
 }
