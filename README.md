@@ -1,5 +1,5 @@
+<img src="https://i.ibb.co/3CC92Z4/picnet-mockup.png"><br>
 # Picnet
-
 Picnet is a visually-focused social media platform that allows users to create, share, and discover stunning visual content. Picnet prioritises multimedia, enabling users to build profiles, upload original artwork, and interact through likes and comments. With a clean interface and an immersive visual experience, Picnet fosters a thriving community centered around the appreciation of creative visual expression.
 
 
