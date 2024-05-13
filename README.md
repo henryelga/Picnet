@@ -28,6 +28,7 @@ Picnet is a visually-focused social media platform that allows users to create, 
     - [Migrating the tables](#migrate-the-tables)
 
 ## About
+Picnet is a social media platform that we developed as a way to challenge ourselves and expand our skills in server-side web development. We built Picnet from scratch using PHP, the Laravel framework, HTML, CSS and Javascript. Through the development of this project we had the opportunity to deeply refine our abilities in areas such as database management, API integration, user authentication, form validation, and front-end user experience design. We were able to demonstrate our knowledge of the Model-View-Controller architecture. It was a rewarding journey that allowed us to push the boundaries of our technical knowledge and problem-solving skills.
 
 ## Picnet Snaps
 ### Welcome Screen
