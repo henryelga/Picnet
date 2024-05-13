@@ -6,7 +6,16 @@ Picnet is a visually-focused social media platform that allows users to create, 
 
 ## Table of Contents
 - [About](#about)
-- [Picnet Snaps](#picnet-snaps)  
+- [Picnet Snaps](#picnet-snaps)
+    - [Welcome Screen](#welcome-screen)
+    - [Home Feed](#home-feed)
+    - [Change Theme](#change-theme)
+    - [Create Post](#create-post)
+    - [Profile Page](#profile-page)
+    - [Edit Profile](#edit-profile)
+    - [Edit Post](#edit-post)
+    - [Admin Dashboard](#admin-dashboard)
+    - [Responsive](#responsive)
 - [Authors](#authors-)
 - [Technologies Used](#technologies-used)
 - [CRUD Functionalities](#crud-functionalities)
